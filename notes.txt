@@ -1,0 +1,90 @@
+function sendMessage(text) {
+  const dataTransfer = new DataTransfer();
+  dataTransfer.setData('text', text);
+  const event = new ClipboardEvent('paste', {
+    clipboardData: dataTransfer,
+    bubbles: true
+  });
+  let el = document.querySelector('#main .copyable-area [contenteditable="true"][role="textbox"]')
+  document.execCommand("selectall");
+  el.dispatchEvent(event)
+}
+sendMessage('some text')
+
+function simulatePasteEvent(element, text) {
+  // Select all child elements of the given element
+  var children = element.querySelectorAll("*");
+
+  const dataTransfer = new DataTransfer();
+  dataTransfer.setData('text', text);
+  const event = new ClipboardEvent('paste', {
+    clipboardData: dataTransfer,
+    bubbles: true
+  });
+
+  children.forEach(function (child) {
+    child.focus();
+    document.execCommand("selectall");
+    child.dispatchEvent(event);
+    // Trigger change event if there are change listeners attached
+    const changeEvent = new Event('change', { bubbles: true });
+    child.dispatchEvent(changeEvent);
+  });
+}
+simulatePasteEvent(document.querySelector('._aoq2._ai01'), 'Anil sharma');
+
+
+
+// set interval to keep searching for the element
+// forward input box 
+const elem = document.querySelector("div[data-animate-modal-body='true'] div[role='textbox'][contenteditable='true']")
+if (elem && !document.hidden && document.hasFocus()) {
+    clearInterval(n),
+    elem.blur(),
+    elem.focus(),
+    t = Je(t);
+    var r = document.createRange();
+    r.selectNodeContents(o),
+    r.deleteContents(),
+    r.insertNode(document.createTextNode(t));
+    var event = new InputEvent("input",{
+        bubbles: true,
+        cancelable: false,
+        inputType: "insertText",
+        data: t
+    });
+    elem.dispatchEvent(event);
+}
+// checkbox to select chat and forward message
+ var t = document.querySelectorAll("div[data-animate-modal-body='true'] div[role='listitem'] div[role='checkbox']")[0];
+t && (clearInterval(s),
+t.click(),
+setTimeout((function() {
+    e(!0)
+}
+
+
+// API to send attachment message to user so that we know after which message we need to select attachment
+ze = "https://api.whatsapp.com/send"
+
+var n = null,
+    o = JSON.parse(window.localStorage.getItem("last-wid")),
+    r = JSON.parse(window.localStorage.getItem("last-wid-md"));
+o ? (n = o.split("@")[0]) : r && (n = r.split("@")[0].split(":")[0]);
+var i = new URLSearchParams();
+i.append("phone", n);
+var a = "_" + Math.random().toString(36).substr(2, 9);
+c = document.getElementById(a)
+var s = "".concat(ze, "?").concat(i),
+    c = document.getElementById(a)
+var l = document.createElement("a");
+    (l.id = a), (l.href = s), (l.style.visibility = "hidden"), document.body.appendChild(l);
+
+
+// select sidebar
+document.querySelector(
+    "#app header > div, header.g0rxnol2.ercejckq.cm280p3y.p357zi0d.gndfcl4n.kcgo1i74.ln8gz9je.e8h85j61.emrlamx0.aiput80m.lyvj5e2u.l9g3jx6n.f6ipylw5 > div, header.x1n2onr6.xfo81ep.x9f619.x78zum5.x6s0dn4.x13a6bvl.xh8yej3.x7j6532.x889kno.x1a8lsjc.x1swvt13.x1pi30zi.x1pl83jw > div"
+)
+
+// forward chat selector
+document.querySelector('[data-icon="forward-chat"]').click()

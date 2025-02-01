@@ -1,0 +1,43 @@
+{
+    "name": "WA Bulk Sender",
+    "short_name": "WA Bulk Sender",
+    "description": "Send bulk messages on WhatsApp Web from your Chrome extension.",
+    "homepage_url": "http://chrome.google.com/webstore",
+    "version": "0.0.1",
+    "version_name": "0.0.1",
+    "manifest_version": 3,
+    "action": {},
+    "permissions":  [
+        "storage"
+    ],
+    "icons": {
+        "128": "images/whatsapp-bot.png"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.whatsapp.com/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "host_permissions": [
+        "https://*.whatsapp.com/*"
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "images/whatsapp-bot.png",
+                "images/rocket_icon.svg",
+                "images/stop_icon.svg"
+            ],
+            "matches": ["<all_urls>"],
+            "extension_ids": []
+        }
+    ]
+}
